@@ -22,10 +22,10 @@ class Google_ServiceFeedResource {
   
   public function parseResponse($response) {
 	try {
-      $body = simplexml_load_string($response->getResponseBody());
+	  $body = $response->getResponseBody();
 	  
-	  $json = json_encode($body);
-      $array = json_decode($json, true);
+	  $array = Google_XmlParserUtil::XmlToArray($body);
+	  
 	  return $array;
 	}
 	catch(Exception $e) {

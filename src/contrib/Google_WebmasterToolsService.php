@@ -45,6 +45,15 @@ class Google_WebmasterToolsSitesService extends Google_ServiceFeedResource {
     $response = $this->sendFeedRequest($methodPath);
 	$data = $this->parseResponse($response);
 	
+	return $data['entry'];
+  }
+  
+  public function getByUrl($siteUrl) {
+    $methodPath = 'sites/' . urlencode($siteUrl);
+	//var_dump($methodPath);exit;
+    $response = $this->sendFeedRequest($methodPath);
+	$data = $this->parseResponse($response);
+	
 	return $data;
   }
 }
