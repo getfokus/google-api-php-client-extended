@@ -20,6 +20,10 @@ class Google_WebmasterToolsService extends Google_Service {
   private $client;
   
   public $sites;
+  public $messages;
+  public $sitemaps;
+  public $crawl;
+  public $keywords;
 
   /**
    * Constructs the internal representation of the Webmaster Tools service.
