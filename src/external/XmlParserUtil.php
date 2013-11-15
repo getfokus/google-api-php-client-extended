@@ -24,7 +24,7 @@ class Google_XmlParserUtil {
       case XML_ELEMENT_NODE:
         for ($i=0, $m=$node->childNodes->length; $i<$m; $i++) {
           $child = $node->childNodes->item($i);
-          $v = domnode_to_array($child);
+          $v = self::XmlDOMToArray($child);
           if(isset($child->tagName)) {
             $t = $child->tagName;
             if(!isset($output[$t])) {

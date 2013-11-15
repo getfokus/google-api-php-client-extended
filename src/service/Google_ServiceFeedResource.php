@@ -26,7 +26,7 @@ class Google_ServiceFeedResource {
 	  
 	  $array = Google_XmlParserUtil::XmlToArray($body);
 	  
-	  return $array['entry'];
+	  return $array;
 	}
 	catch(Exception $e) {
 	  return array();
