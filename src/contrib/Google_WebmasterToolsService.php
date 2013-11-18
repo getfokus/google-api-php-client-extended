@@ -53,6 +53,12 @@ class Google_WebmasterToolsSitesService extends Google_ServiceFeedResource {
     $response = $this->sendFeedRequest($methodPath);
     $data = $this->parseResponse($response);
     
+	if(!isset($data['entry']))
+	  return array();
+	
+	if(isset($data['entry']['id'])) // only one item
+	  return array($data);
+	
     return $data['entry'];
   }
   
