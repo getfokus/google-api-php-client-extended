@@ -1,26 +1,26 @@
 {
-    "name": "getfokus/google-api-php-client-extended",
-    "license": "Apache License 2.0",
-    "type": "library",
-    "description": "Extended google-api-php-client",
-    "require": {
-        "google/google-api-php-client": "*"
-    },
-    "autoload": {
-        "classmap": ["src/", "../../google/google-api-php-client/src"]
-    },
-    "repositories": [
-        {
-            "type": "package",
-            "package": {
-                "name": "google/google-api-php-client",
-                "version": "1.0.0",
-                "source": {
-                    "type": "svn",
-                    "url": "http://google-api-php-client.googlecode.com/svn",
-                    "reference": "trunk"
-                }
-            }
-        }
-    ]
+	"name": "getfokus/google-api-php-client-extended",
+	"license": "Apache License 2.0",
+	"type": "library",
+	"description": "Extended google-api-php-client",
+	"require": {
+		"google/google-api-php-client": "*"
+	},
+	"autoload": {
+		"classmap": ["src/", "../../google/google-api-php-client/src"]
+	},
+	"repositories": [
+		{
+			"type": "package",
+			"package": {
+				"name": "google/google-api-php-client",
+				"version": "1.0.0",
+				"source": {
+					"type": "svn",
+					"url": "http://google-api-php-client.googlecode.com/svn",
+					"reference": "trunk"
+				}
+			}
+		}
+	]
 }
