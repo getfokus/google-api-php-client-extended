@@ -11,12 +11,31 @@ class Google_ServiceFeedResource {
 	}
 
 	public function sendFeedRequest($methodPath, array $params = array()) {
-		$url = Google_REST::createRequestUri($this->service->servicePath, $methodPath, $params);
-
-		$httpRequest = new Google_HttpRequest($url, 'GET', null, null);
-
-		$response = $this->client->getIo()->authenticatedRequest($httpRequest);
-
+		$url = Google_Http_REST::createRequestUri(
+			$this->service->servicePath,
+			$methodPath,
+			$params
+		);
+		
+		$httpRequest = new Google_Http_Request(
+			$url,
+			'GET',
+			null,
+			null
+		);
+		
+		$httpRequest = $this->client->getAuth()->sign($httpRequest);
+		
+		try {
+ 			//$response = $this->client->execute($httpRequest);
+			// leave execue() because the json deserialization is in it
+			// we need pure xml, su custom requesting
+			
+			$response = $this->client->getIo()->makeRequest($httpRequest);
+		}
+		catch(\Exception $e) {
+		}
+		
 		return $response;
 	}
 
